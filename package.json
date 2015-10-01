@@ -1,0 +1,8 @@
+{
+  "name": "AbsoluteDemo",
+  "description": "Absolute project test",
+  "main": "app.js",
+  "dependencies": {
+    "tabris": "^1.2.0"
+  }
+}
