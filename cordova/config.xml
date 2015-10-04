@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.tabrisjs.getting.started" version="1.0.0">
-  <name>HelloWorld</name>
+  <name>Malibu</name>
   <description>
-   A sample Tabris.js application.
+   Expediente Clinico Movil
   </description>
   <author email="contacto@iaiolabs.com" href="https://iaiolabs.com">
-   Tabris.js Team
+   Equipo IAIOlabs
   </author>
 </widget>

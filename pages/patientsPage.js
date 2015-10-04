@@ -1,9 +1,10 @@
 var PAGE_MARGIN = 16;
+var WIDGET_MARGIN = 5;
 var patients = require("../patients.json");
 var patientsDetailPage = require("./patientDetailsPage.js");
 
 var page = tabris.create("Page", {
-  title:"Lista de Pacientes",
+  title:"Pacientes",
   topLevel:true,
   image: {src: "images/Contacts-64.png", scale: 0}
 });
@@ -14,21 +15,28 @@ var patientsCollection = tabris.create("CollectionView", {
   items: patients,
   initializeCell:function(cell) {
     var imageView = tabris.create("ImageView", {
-        layoutData: {left: PAGE_MARGIN, centerY: 0, width: 32, height: 48},
+        layoutData: {left: PAGE_MARGIN, centerY: 0, width: 64, height: 64},
         scaleMode: "fit"
       }).appendTo(cell);
       var nameTextView = tabris.create("TextView", {
-        layoutData: {left: 64, right: PAGE_MARGIN, top: PAGE_MARGIN},
+        layoutData: {left: [imageView, WIDGET_MARGIN], right: PAGE_MARGIN, top: WIDGET_MARGIN},
         markupEnabled: true,
         textColor: "#4a4a4a"
       }).appendTo(cell);
       var dobTextView = tabris.create("TextView", {
-        layoutData: {left: 64, right: PAGE_MARGIN, top: [nameTextView, 4]},
+        layoutData: {left: [imageView, WIDGET_MARGIN], right: PAGE_MARGIN, top: [nameTextView, WIDGET_MARGIN]},
         textColor: "#7b7b7b"
       }).appendTo(cell);
       cell.on("change:item", function(widget, patient) {
         //imageView.set("image", patient.image);
-        nameTextView.set("text", patient.firstName + "  " + patient.lastName);
+        if(patient.sex == "male")
+        {
+          imageView.set("image", "./images/Businessman-64.png");
+        }
+        else if(patient.sex == "female") {
+          imageView.set("image", "./images/Businesswoman-64.png");
+        }
+        nameTextView.set("text","<big>" + patient.firstName + "  " + patient.lastName + "</big>");
         dobTextView.set("text", patient.dob + " / " + patient.sex);
       });
   }

@@ -1,7 +1,7 @@
 {
-  "name": "AbsoluteDemo",
-  "description": "Absolute project test",
-  "main": "app.js",
+  "name": "Malibu EMR",
+  "description": "Mobile Electronic Medical Record System",
+  "main": "login.js",
   "dependencies": {
     "tabris": "^1.2.0"
   }

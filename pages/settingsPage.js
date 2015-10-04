@@ -3,9 +3,9 @@ var settingsPage = createSettingsPage();
 
 function createSettingsPage() {
   var page = tabris.create("Page", {
-    title: "Preferencias",
+    title: "Configuracion",
     topLevel:true,
-    image: {src: "images/Settings-64.png", scale: 0}
+    image: {src: "images/Settings-64.png", scale: 1}
   });
   var settingsTextView = tabris.create("TextView", {
     text: "Book covers come under CC BY 2.0",
