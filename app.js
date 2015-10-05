@@ -1,4 +1,4 @@
-function initializeApplication (Parse, loggedInUser, loginPage) {
+function initializeApplication (Parse, loginPage) {
   var dummyPage = require("./pages/dummyPage.js");
   var homePageBuilder = require("./pages/main.js");
 
